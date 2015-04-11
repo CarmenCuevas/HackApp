@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  giro: MyString
+  forma_juridica: MyString
+  tamaño: MyString
+  rango: MyString
+  capital_inicial: 1
+  roi: 1
+  longitud: 1
+  latitud: 1
+
+two:
+  nombre: MyString
+  giro: MyString
+  forma_juridica: MyString
+  tamaño: MyString
+  rango: MyString
+  capital_inicial: 1
+  roi: 1
+  longitud: 1
+  latitud: 1

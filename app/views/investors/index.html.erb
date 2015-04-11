@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de inversores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Perfil</th>
+      <th>Sector</th>
+      <th>Resultado</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @investors.each do |investor| %>
+      <tr>
+        <td><%= investor.nombre %></td>
+        <td><%= investor.edad %></td>
+        <td><%= investor.perfil %></td>
+        <td><%= investor.sector %></td>
+        <td><%= investor.resultado %></td>
+        <td><%= investor.latitud %></td>
+        <td><%= investor.longitud %></td>
+        <td><%= link_to 'Mostrar', investor %></td>
+        <td><%= link_to 'Editar', edit_investor_path(investor) %></td>
+        <td><%= link_to 'Eliminar', investor, method: :delete, data: { confirm: '¿Esta Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo inversionista', new_investor_path %>

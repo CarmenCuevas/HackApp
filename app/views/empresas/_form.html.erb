@@ -1,0 +1,59 @@
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-3 col-md-offset-3">
+<%= form_for @empresa,html:{class:"form-horizontal"} do |f| %>
+  
+  <% if @empresa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+
+      <ul>
+      <% @empresa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <%= f.text_field :nombre, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :giro, :class => 'control-label'%>
+    <%= f.text_field :giro, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :forma_juridica, :class => 'control-label' %>
+    <%= f.text_field :forma_juridica , :class => 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :tamaño, :class => 'control-label' %>
+    <%= f.text_field :tamaño, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :rango, :class => 'control-label' %>
+    <%= f.text_field :rango , :class => 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :capital_inicial, :class => 'control-label' %>
+    <%= f.number_field :capital_inicial, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :roi , :class => 'control-label'%>
+    <%= f.number_field :roi , :class => 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :longitud, :class => 'control-label' %>
+    <%= f.number_field :longitud , :class => 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :latitud , :class => 'control-label'%>
+    <%= f.number_field :latitud, :class => 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Enviar", :class => 'btn btn-default' %>
+  </div>
+<% end %>
+</div>
+</div>
+

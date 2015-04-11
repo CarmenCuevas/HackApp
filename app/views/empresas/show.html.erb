@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @empresa.nombre %>
+</p>
+
+<p>
+  <strong>Giro:</strong>
+  <%= @empresa.giro %>
+</p>
+
+<p>
+  <strong>Forma juridica:</strong>
+  <%= @empresa.forma_juridica %>
+</p>
+
+<p>
+  <strong>Tamaño:</strong>
+  <%= @empresa.tamaño %>
+</p>
+
+<p>
+  <strong>Rango:</strong>
+  <%= @empresa.rango %>
+</p>
+
+<p>
+  <strong>Capital inicial:</strong>
+  <%= @empresa.capital_inicial %>
+</p>
+
+<p>
+  <strong>Roi:</strong>
+  <%= @empresa.roi %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @empresa.longitud %>
+</p>
+
+<p>
+  <strong>Latitud:</strong>
+  <%= @empresa.latitud %>
+</p>
+
+<%= link_to 'Editar', edit_empresa_path(@empresa) %> |
+<%= link_to 'Regresar', empresas_path %>

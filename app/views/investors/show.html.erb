@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @investor.nombre %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @investor.edad %>
+</p>
+
+<p>
+  <strong>Perfil:</strong>
+  <%= @investor.perfil %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @investor.sector %>
+</p>
+
+<p>
+  <strong>Resultado:</strong>
+  <%= @investor.resultado %>
+</p>
+
+<p>
+  <strong>Latitud:</strong>
+  <%= @investor.latitud %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @investor.longitud %>
+</p>
+
+<%= link_to 'Editar', edit_investor_path(@investor) %> |
+<%= link_to 'Regresar', investors_path %>
