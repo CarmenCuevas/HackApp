@@ -1,10 +1,19 @@
 class InvestorsController < ApplicationController
+
   before_action :set_investor, only: [:show, :edit, :update, :destroy]
 
   # GET /investors
   # GET /investors.json
   def index
     @investors = Investor.all
+  end
+
+   def indexP
+    
+  end
+
+  def tiendas
+    render 'tiendas'
   end
 
   # GET /investors/1

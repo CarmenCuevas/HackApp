@@ -11,21 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411211931) do
+ActiveRecord::Schema.define(version: 20150412023457) do
 
   create_table "empresas", force: :cascade do |t|
-    t.string   "nombre",          limit: 255
-    t.string   "giro",            limit: 255
-    t.string   "forma_juridica",  limit: 255
-    t.string   "tamaño",          limit: 255
-    t.string   "rango",           limit: 255
-    t.integer  "capital_inicial", limit: 4
-    t.integer  "roi",             limit: 4
-    t.integer  "longitud",        limit: 4
-    t.integer  "latitud",         limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "nombre",                 limit: 255
+    t.string   "giro",                   limit: 255
+    t.string   "forma_juridica",         limit: 255
+    t.string   "tamaño",                 limit: 255
+    t.string   "rango",                  limit: 255
+    t.integer  "capital_inicial",        limit: 4
+    t.integer  "roi",                    limit: 4
+    t.integer  "longitud",               limit: 4
+    t.integer  "latitud",                limit: 4
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
   end
+
+  add_index "empresas", ["email"], name: "index_empresas_on_email", unique: true, using: :btree
+  add_index "empresas", ["reset_password_token"], name: "index_empresas_on_reset_password_token", unique: true, using: :btree
 
   create_table "investors", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -47,15 +60,28 @@ ActiveRecord::Schema.define(version: 20150411211931) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "nombre",         limit: 255
-    t.integer  "edad",           limit: 4
-    t.string   "perfil",         limit: 255
-    t.string   "sector_laboral", limit: 255
-    t.string   "resultado",      limit: 255
-    t.integer  "latitud",        limit: 4
-    t.integer  "longitud",       limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "nombre",                 limit: 255
+    t.integer  "edad",                   limit: 4
+    t.string   "perfil",                 limit: 255
+    t.string   "sector_laboral",         limit: 255
+    t.string   "resultado",              limit: 255
+    t.integer  "latitud",                limit: 4
+    t.integer  "longitud",               limit: 4
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
